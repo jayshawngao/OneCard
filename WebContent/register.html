@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/xgxt_login.css" />
+<title>用户注册</title>
+<script type="text/javascript">
+function check()
+{
+ if(document.form2.name.value=="")
+ {
+ alert("姓名不能为空！");
+ document.form2.name.focus();
+ return false;
+ }
+ if(document.form2.pwd1.value==""){
+ alert("密码不能为空！");
+ document.form2.pwd1.focus();
+ return false;
+ }
+ if(document.form2.pwd2.value==""){
+	 alert("请再次确认密码！");
+	 document.form2.pwd1.focus();
+	 return false;
+	 }
+ if(document.form2.pwd1.value!=document.form2.pwd2.value){
+	 alert("两次密码不相同！");
+	 document.form2.pwd2.focus();
+	 return false;
+	 }
+ if(document.form2.sex.value==""){
+	 alert("性别不能为空！");
+	 document.form2.sex.focus();
+	 return false;
+	 }
+ if(document.form2.age.value==""){
+	 alert("性别不能为空！");
+	 document.form2.age.focus();
+	 return false;
+	 }
+ if(document.form2.phone.value==""){
+	 alert("性别不能为空！");
+	 document.form2.phone.focus();
+	 return false;
+	 }
+ if(document.form2.t1.value==""){
+	 alert("权限不能为空！");
+	 return false;
+	 }
+return true;
+}
+
+</script>
+
+</head>
+<body>
+
+
+<div id="header">
+	<div class="header_title">
+	<img src="img/logo.png"  width=15% height=15% />
+	<span class="title_con">东南一卡通</span>	
+	</div>
+</div>
+
+
+<form name="form2" method="get" action="/OneCard/RegisterServlet">
+<input name="method" type="hidden" value="register"/>
+<div>
+	<center>
+		<div class="con1">
+		<div class="con_title">
+			<span class="con_title_sp">用户注册</span>
+		</div>
+			<div class="con_input1">
+				<span>姓名：</span><input name="name" type="text" placeholder="姓名"/>
+			</div>
+			<div class="con_input1">
+				<span>密码：</span><input type="password" name="pwd1" placeholder="密码"/>
+			</div>
+			<div class="con_input1">
+				<span>确认：</span><input type="password" name="pwd2" placeholder="确认密码"/>
+			</div>
+			<div class="con_input1">
+				<span>性别：</span><input name="sex" type="text" placeholder="性别"/>
+			</div>
+			<div class="con_input1">
+				<span>年龄：</span><input name="age" type="text" placeholder="年龄"/>
+			</div>
+			<div class="con_input1">
+				<span>电话：</span><input name="phone" type="text" placeholder="联系方式"/>
+			</div>
+			
+			
+			<div class="con_select">
+				<input type="radio" name="t1" value="学生" />学生
+				<input type="radio" name="t1" value="教师" />教师
+				<input type="radio" name="t1" value="管理员" />管理员
+			</div>
+			<input type="submit" value="提    交" class="submit-btn" onclick="return check()" />
+			<input type="reset" value="重   置" class="submit-btn"  />
+	</div>
+	</center>
+</div>
+</form>
+
+
+
+</body>
+</html>

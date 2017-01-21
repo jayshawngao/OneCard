@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/xgxt_login.css" />
+<title>用户登录</title>
+</head>
+<body>
+<script type="text/javascript">
+function check()
+{
+ if(document.form1.id.value=="")
+ {
+ alert("用户名不能为空！");
+ document.form1.id.focus();
+ return false;
+ }
+ if(document.form1.pwd.value==""){
+ alert("密码不能为空！");
+ document.form1.pwd.focus();
+ return false;
+ }
+ if(document.form1.t1.value==""){
+	 alert("权限不能为空！");
+	 return false;
+	 }
+return true;
+}
+</script>
+<div id="header">
+	<div class="header_title">
+	<img src="img/logo.png"  width=15% height=15% />
+	<span class="title_con">东南一卡通</span>	
+	</div>
+</div>
+<form name=form1 method="get" action="/OneCard/LoginServlet">
+<div>
+	<center>
+		<div class="con">
+		<div class="con_title">
+			<span class="con_title_sp">欢迎登录东南一卡通系统</span>
+		</div>
+		<div class="con_panel">
+			<div class="con_input">
+				<span>用户名：</span><input name="id"  type="text" placeholder="学号/工号"/>
+			</div>
+			<div class="con_input">
+				<span>密&nbsp;&nbsp;&nbsp;&nbsp;码：</span><input type="password" name="pwd"  placeholder="密码"/>
+			</div>
+			<div class="con_select">
+				<input type="radio" name="t1" value="学生" />学生
+				<input type="radio" name="t1" value="教师" />教师
+				<input type="radio" name="t1" value="管理员" />管理员
+			</div>
+
+			<input type="submit" value="登    录" class="submit-btn" onclick="return check()"/>
+			<input type="button" value="注   册" class="submit-btn"  onclick="window.location=('register.html')" />
+		</div>
+	</div>
+	</center>
+</div>
+</form>
+
+
+</body>
+</html>
