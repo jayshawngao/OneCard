@@ -1,2 +1,2 @@
 # OneCard
-一卡通系统
+基于JavaWeb的一卡通系统
